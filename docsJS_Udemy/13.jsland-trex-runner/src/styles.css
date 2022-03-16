@@ -1,0 +1,98 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body:before {
+  content: 'Jsland - T-Rex Runner';
+  font-family: Segoe Print;
+  position: absolute;
+  color: red;
+  font-size: 30px;
+  left: 20px;
+  top: 20px;
+  font-weight: bold;
+}
+
+#app {
+  position: relative;
+  min-height: 200px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  background: url(./src/sprites.png) repeat-x bottom;
+  min-height: 30px;
+  width: 100%;
+}
+
+#info {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #535353;
+  font-family: Segoe Print, Arial, Helvetica, sans-serif;
+  z-index: 2;
+  background: white;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+#info span {
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 900;
+}
+
+#trex {
+  position: absolute;
+  background: url(./src/sprites.png) no-repeat bottom;
+  width: 85px;
+  height: 95px;
+  background-position: -1338px 0px;
+  animation: trex-run 0.3s steps(5) infinite;
+  left: 50px;
+  bottom: 0;
+  z-index: 1;
+}
+
+#cactuses {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.cactus {
+  position: absolute;
+  bottom: 0;
+}
+
+.cactus div {
+  display: inline-block;
+  white-space: nowrap;
+  background: url(./src/sprites.png) no-repeat top;
+}
+
+.cactus .small {
+  width: 35px;
+  height: 70px;
+  background-position-x: -445px;
+}
+
+.cactus .big {
+  width: 50px;
+  height: 95px;
+  background-position-x: -650px;
+}
+
+@keyframes trex-run {
+  100% {
+    background-position-x: -1780px;
+  }
+}
